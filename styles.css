@@ -302,8 +302,9 @@ section[id], header[id] { scroll-margin-top: 60px; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 32px 64px;
+  align-items: center;
 }
-.intro-icon { width: 88px; height: 88px; }
+.intro-logo { width: clamp(240px, 28vw, 380px); height: auto; margin-top: 8px; }
 .intro-statement {
   grid-column: span 2;
   margin: 0;
