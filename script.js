@@ -340,19 +340,23 @@
     var wrap = $('expGroups');
     wrap.innerHTML = '';
     AMENITIES.forEach(function (g, i) {
-      var group = el('div', 'exp-group' + (i === S.exp ? ' is-active' : ''));
+      var group = el('div', 'exp-group');
       var row = el('button', 'exp-row',
-        '<span class="exp-num">0' + (i + 1) + '</span><span class="exp-name">' + esc(g.title[S.lang]) + '</span><i class="ph-light ph-' + (i === S.exp ? 'minus' : 'plus') + '"></i>');
+        '<span class="exp-num">0' + (i + 1) + '</span><span class="exp-name">' + esc(g.title[S.lang]) + '</span><span class="exp-icon"><i class="ph-light ph-plus"></i><i class="ph-light ph-minus"></i></span>');
       row.type = 'button';
-      var select = function () { if (S.exp !== i) { S.exp = i; renderExp(); } };
+      var select = function () { if (S.exp !== i) { S.exp = i; updateExp(); } };
       row.addEventListener('click', select);
       group.addEventListener('mouseenter', select);
       var ul = el('ul', 'exp-items');
       g.items.forEach(function (it) {
         ul.appendChild(el('li', '', '<i class="ph-light ph-' + it[0] + '"></i>' + esc(it[li])));
       });
+      var inner = el('div', 'exp-body-inner');
+      inner.appendChild(ul);
+      var bodyWrap = el('div', 'exp-body-wrap');
+      bodyWrap.appendChild(inner);
       group.appendChild(row);
-      group.appendChild(ul);
+      group.appendChild(bodyWrap);
       wrap.appendChild(group);
     });
 
@@ -360,6 +364,15 @@
     if (!photos.children.length) {
       AMENITIES.forEach(function (g) { var img = el('img'); img.src = g.img; photos.appendChild(img); });
     }
+    updateExp();
+  }
+
+  function updateExp() {
+    Array.prototype.forEach.call($('expGroups').children, function (group, i) {
+      group.classList.toggle('is-active', i === S.exp);
+      group.querySelector('.exp-row').setAttribute('aria-expanded', i === S.exp ? 'true' : 'false');
+    });
+    var photos = $('expImgs');
     Array.prototype.forEach.call(photos.children, function (img, i) {
       img.classList.toggle('is-active', i === S.exp);
       img.alt = AMENITIES[i].title[S.lang];
