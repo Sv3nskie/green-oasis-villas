@@ -121,6 +121,7 @@
       contactTitle: 'Kom tot rust in Borobudur.', contactBody: 'Stuur ons je data en we laten snel weten welke villa beschikbaar is. Je krijgt antwoord van ons persoonlijk.',
       formTitle: 'Beschikbaarheid aanvragen', fName: 'Naam', fIn: 'Aankomst', fOut: 'Vertrek', fGuests: 'Gasten', fVilla: 'Villa', fMsg: 'Bericht', fMsgPh: 'Extra bed, vliegveld-shuttle, wensen…', send: 'Verstuur via WhatsApp', formNote: 'Opent WhatsApp met je aanvraag ingevuld.',
       footerLine: 'Luxe villa’s met privézwembad bij de tempel van Borobudur',
+      footerExplore: 'Ontdek',
       waIntro: 'Hallo Green Oasis, ik wil graag beschikbaarheid aanvragen.'
     },
     en: {
@@ -180,6 +181,7 @@
       contactTitle: 'Come and unwind in Borobudur.', contactBody: 'Send us your dates and we’ll quickly let you know which villa is free. You’ll hear back from us personally.',
       formTitle: 'Check availability', fName: 'Name', fIn: 'Check-in', fOut: 'Check-out', fGuests: 'Guests', fVilla: 'Villa', fMsg: 'Message', fMsgPh: 'Extra bed, airport shuttle, wishes…', send: 'Send via WhatsApp', formNote: 'Opens WhatsApp with your request filled in.',
       footerLine: 'Luxury private pool villas near Borobudur Temple',
+      footerExplore: 'Explore',
       waIntro: 'Hello Green Oasis, I would like to check availability.'
     },
     id: {
@@ -239,6 +241,7 @@
       contactTitle: 'Bersantai di Borobudur.', contactBody: 'Kirimkan tanggal Anda dan kami segera kabari vila mana yang tersedia. Kami akan membalas secara pribadi.',
       formTitle: 'Cek ketersediaan', fName: 'Nama', fIn: 'Check-in', fOut: 'Check-out', fGuests: 'Tamu', fVilla: 'Vila', fMsg: 'Pesan', fMsgPh: 'Extra bed, antar-jemput bandara, permintaan…', send: 'Kirim via WhatsApp', formNote: 'Membuka WhatsApp dengan permintaan Anda.',
       footerLine: 'Vila mewah dengan kolam pribadi dekat Candi Borobudur',
+      footerExplore: 'Jelajahi',
       waIntro: 'Halo Green Oasis, saya ingin cek ketersediaan.'
     }
   };
@@ -286,7 +289,7 @@
       var v = t[n.getAttribute('data-i18n-alt')];
       if (typeof v === 'string') n.alt = v;
     });
-    document.querySelectorAll('#langSwitch button').forEach(function (b) {
+    document.querySelectorAll('#langSwitch button, #footerLangs button').forEach(function (b) {
       b.classList.toggle('is-active', b.getAttribute('data-lang') === S.lang);
     });
   }
@@ -453,15 +456,25 @@
     var wrap = $('faqs');
     wrap.innerHTML = '';
     t.faqs.forEach(function (f, i) {
-      var open = S.faq === i;
-      var item = el('div', 'faq-item' + (open ? ' is-open' : ''));
-      var q = el('button', 'faq-q', esc(f[0]) + '<i class="ph-light ph-' + (open ? 'minus' : 'plus') + '"></i>');
+      var item = el('div', 'faq-item');
+      var q = el('button', 'faq-q', '<span>' + esc(f[0]) + '</span><span class="exp-icon"><i class="ph-light ph-plus"></i><i class="ph-light ph-minus"></i></span>');
       q.type = 'button';
-      q.setAttribute('aria-expanded', open ? 'true' : 'false');
-      q.addEventListener('click', function () { S.faq = S.faq === i ? -1 : i; renderFaqs(); });
+      q.addEventListener('click', function () { S.faq = S.faq === i ? -1 : i; updateFaqs(); });
+      var inner = el('div', 'faq-inner');
+      inner.appendChild(el('p', 'faq-a', esc(f[1])));
+      var bodyWrap = el('div', 'faq-wrap');
+      bodyWrap.appendChild(inner);
       item.appendChild(q);
-      item.appendChild(el('p', 'faq-a', esc(f[1])));
+      item.appendChild(bodyWrap);
       wrap.appendChild(item);
+    });
+    updateFaqs();
+  }
+
+  function updateFaqs() {
+    Array.prototype.forEach.call($('faqs').children, function (item, i) {
+      item.classList.toggle('is-open', i === S.faq);
+      item.querySelector('.faq-q').setAttribute('aria-expanded', i === S.faq ? 'true' : 'false');
     });
   }
 
@@ -529,7 +542,7 @@
     renderAll();
     startSlideTimer();
 
-    document.querySelectorAll('#langSwitch button').forEach(function (b) {
+    document.querySelectorAll('#langSwitch button, #footerLangs button').forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
     });
 
@@ -573,6 +586,7 @@
 
     // Contact form
     $('waLink').href = 'https://wa.me/' + WA_NUMBER;
+    document.querySelector('.footer-wa').href = 'https://wa.me/' + WA_NUMBER;
     $('enquiryForm').addEventListener('submit', function (e) {
       e.preventDefault();
       var f = new FormData(e.target);
