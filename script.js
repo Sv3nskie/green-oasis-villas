@@ -61,7 +61,7 @@
   ];
 
   var TRIP_ICONS = ['sun-horizon', 'van', 'waves', 'bicycle', 'storefront', 'basket'];
-  var TRIP_SLOT_LABELS = ['Sunrise at the temple', 'VW Safari tour', 'Waterfalls', 'Cycling', 'Local markets', 'Pottery village (Klipoh)'];
+  var TRIP_IMGS = ['trip-sunrise', 'trip-vw', 'trip-waterfalls', 'trip-cycling', 'trip-market', 'trip-pottery'];
 
   var T = {
     nl: {
@@ -429,7 +429,7 @@
     wrap.innerHTML = '';
     t.trips.forEach(function (tr, i) {
       var a = el('article', 'trip',
-        '<div class="slot ratio-4-5"><span>' + esc(TRIP_SLOT_LABELS[i]) + '</span></div>' +
+        '<div class="trip-photo ratio-4-5"><img src="assets/places/' + TRIP_IMGS[i] + '.jpg" alt="' + esc(tr.title) + '" loading="lazy"></div>' +
         '<div class="trip-text"><i class="ph-thin ph-' + TRIP_ICONS[i] + '"></i><div><p class="trip-title">' + esc(tr.title) + '</p><p class="trip-body">' + esc(tr.body) + '</p></div></div>');
       wrap.appendChild(a);
     });

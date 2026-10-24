@@ -510,6 +510,15 @@ section[id], header[id] { scroll-margin-top: 60px; }
   background: radial-gradient(ellipse at 50% 40%, oklch(0.98 0.01 88 / 0.08), transparent 70%);
 }
 .slot span { position: relative; }
+.dest-photo, .trip-photo { position: relative; margin: 0; border-radius: 4px; overflow: hidden; background: oklch(0.2 0.03 150); }
+.dest-photo img, .trip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1200ms var(--ease-soft); }
+.dest-photo:hover img, .trip:hover .trip-photo img { transform: scale(1.05); }
+.dest-photo figcaption {
+  position: absolute; left: 16px; bottom: 14px;
+  font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--ivory);
+  text-shadow: 0 1px 2px oklch(0.15 0.03 150 / 0.6), 0 6px 20px oklch(0.15 0.03 150 / 0.5);
+}
+.dest-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, oklch(0.15 0.03 150 / 0.55)); pointer-events: none; }
 .ratio-4-3 { aspect-ratio: 4 / 3; }
 .ratio-4-5 { aspect-ratio: 4 / 5; }
 .story .slot { background: var(--paper); border-color: var(--line); color: var(--muted); }
