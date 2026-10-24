@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green Oasis Villas Borobudur — Luxury private pool villas near Borobudur Temple</title>
+<meta name="description" content="Two luxury villas with private swimming pool and lush tropical garden near Borobudur Temple, Magelang, Central Java. Breakfast included, floating breakfast, free bicycles, airport shuttle. From IDR 1.100.000 per night.">
+<meta name="keywords" content="villa Borobudur, private pool villa Magelang, luxury villa near Borobudur temple, homestay Borobudur, villa dengan kolam renang Borobudur, floating breakfast Borobudur, Menoreh Hills, VW tour Borobudur">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Green Oasis Villas Borobudur","description":"Two luxury private pool villas in a lush tropical garden near Borobudur Temple, Central Java. Breakfast included.","address":{"@type":"PostalAddress","addressLocality":"Borobudur","addressRegion":"Magelang, Central Java","addressCountry":"ID"},"priceRange":"IDR 1.100.000 per night","amenityFeature":["Private swimming pool","Breakfast included","Floating breakfast","Free bicycles","Air conditioning","Panorama guest room","Mini bar","Central kitchen","Airport shuttle with driver"],"availableLanguage":["nl","en","id"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where are the villas?","acceptedAnswer":{"@type":"Answer","text":"In Borobudur, Magelang (Central Java), close to Borobudur Temple and the Menoreh Hills. Yogyakarta International Airport (YIA) is reachable by car; our driver can pick you up on request."}},
+{"@type":"Question","name":"How much is a night?","acceptedAnswer":{"@type":"Answer","text":"IDR 1,100,000 per villa per night, breakfast included. A different rate applies on public holidays."}},
+{"@type":"Question","name":"Is there a private pool?","acceptedAnswer":{"@type":"Answer","text":"Yes, a private swimming pool in a lush tropical garden. Floating breakfast in the pool is available."}},
+{"@type":"Question","name":"Can I get an extra bed?","acceptedAnswer":{"@type":"Answer","text":"Yes, an extra bed is available at a charge. Just mention it in your request."}},
+{"@type":"Question","name":"Can you arrange trips?","acceptedAnswer":{"@type":"Answer","text":"Happily. We arrange a driver for temple sunrise, VW tours, waterfalls, markets and the pottery village."}}
+]}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-logo" aria-label="Green Oasis Villas Borobudur">
+    <img class="nav-logo-color" src="assets/logo-wide.png" alt="Green Oasis Villas Borobudur">
+    <span class="nav-logo-light">
+      <span class="logo-circle logo-circle-sm"><img src="assets/icon.png" alt=""></span>
+      <span class="logo-words">
+        <span class="logo-name">Green <span class="gold">Oasis</span></span>
+        <span class="logo-sub">VILLAS · BOROBUDUR</span>
+      </span>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="#experience" data-i18n="navExp"></a>
+    <a href="#destination" data-i18n="navDest"></a>
+    <a href="#story" data-i18n="navStory"></a>
+    <a href="#contact" data-i18n="navContact"></a>
+  </div>
+  <div class="lang-switch" id="langSwitch">
+    <button type="button" data-lang="nl">NL</button>
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="id">ID</button>
+  </div>
+  <a href="#rates" class="btn btn-gold btn-sm" data-i18n="book"></a>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-slides" id="heroSlides"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-bottom">
+    <div class="container hero-row">
+      <div class="hero-text">
+        <p class="kicker kicker-light" data-i18n="heroKicker"></p>
+        <h1 class="hero-title">
+          <span data-i18n="heroL1"></span>
+          <span class="hero-title-italic" data-i18n="heroL2"></span>
+        </h1>
+        <div class="hero-cta">
+          <a href="#experience" class="btn btn-ivory" ><span data-i18n="navExp"></span> <i class="ph ph-arrow-right"></i></a>
+          <span class="hero-price"><span data-i18n="from"></span> <span class="hero-price-num">IDR 1.100.000</span> <span data-i18n="perNightBf"></span></span>
+        </div>
+      </div>
+      <div class="hero-side">
+        <p class="hero-caption" id="heroCaption"></p>
+        <div class="hero-dots" id="heroDots"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container intro-grid">
+    <div data-reveal>
+      <p class="kicker" data-i18n="welcome"></p>
+      <img src="assets/icon.png" alt="" class="intro-icon">
+    </div>
+    <p class="intro-statement" data-reveal data-i18n="introStatement"></p>
+  </div>
+  <div class="container stats" id="stats"></div>
+</section>
+
+<section id="experience" class="section section-paper">
+  <div class="container exp-grid">
+    <div>
+      <div data-reveal>
+        <p class="kicker" data-i18n="expKicker"></p>
+        <h2 class="h2 exp-title" data-i18n="expTitle"></h2>
+        <p class="body muted exp-body" data-i18n="expBody"></p>
+      </div>
+      <div class="accordion exp-accordion" id="expGroups"></div>
+      <div class="villas">
+        <div><p class="villa-name" data-i18n="villaA"></p><p class="villa-desc" data-i18n="villaADesc"></p></div>
+        <div><p class="villa-name" data-i18n="villaB"></p><p class="villa-desc" data-i18n="villaBDesc"></p></div>
+      </div>
+    </div>
+    <div class="exp-sticky">
+      <div class="exp-photo" id="expImgs"></div>
+      <p class="caption-italic" id="expCaption"></p>
+    </div>
+  </div>
+</section>
+
+<section class="daynight" id="daynight" aria-label="Day and night">
+  <img src="assets/hd/villa-day.jpg" alt="" class="dn-img dn-day" data-i18n-alt="splitAlt">
+  <img src="assets/hd/path-night.jpg" alt="" class="dn-img dn-night" data-i18n-alt="nightL">
+  <div class="dn-shade"></div>
+  <div class="container dn-content">
+    <div class="dn-text" data-reveal>
+      <div class="pill-group pill-group-glass" id="dnToggle">
+        <button type="button" class="pill pill-dark is-active" data-dn="day"><i class="ph ph-sun"></i><span data-i18n="dayL"></span></button>
+        <button type="button" class="pill pill-dark" data-dn="night"><i class="ph ph-moon-stars"></i><span data-i18n="nightL"></span></button>
+      </div>
+      <p class="kicker kicker-light" id="dnKicker"></p>
+      <h2 class="h2" id="dnTitle"></h2>
+      <p class="body dn-body" id="dnBody"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-label="Gallery">
+  <div class="container">
+    <div class="gallery-head" data-reveal>
+      <div>
+        <p class="kicker" data-i18n="galleryHint"></p>
+        <h2 class="h2" data-i18n="galleryTitle"></h2>
+      </div>
+      <div class="pill-group" id="galleryFilters"></div>
+    </div>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section id="destination" class="section section-forest">
+  <div class="container">
+    <div class="dest-head" data-reveal>
+      <div>
+        <p class="kicker kicker-gold-light" data-i18n="destKicker"></p>
+        <h2 class="h2 dest-title" data-i18n="destTitle"></h2>
+      </div>
+      <p class="body dest-body" data-i18n="destBody"></p>
+    </div>
+    <div class="dest-photos">
+      <div class="slot ratio-4-3" data-reveal><span>Borobudur Temple</span></div>
+      <div class="slot ratio-4-3" data-reveal><span>Rice fields (sawah)</span></div>
+      <div class="slot ratio-4-3" data-reveal><span>Menoreh Hills</span></div>
+    </div>
+    <div class="dest-more">
+      <p class="dest-more-title" data-i18n="destMore"></p>
+      <div class="arrows">
+        <button type="button" class="arrow-btn" id="destPrev" aria-label="Previous"><i class="ph ph-arrow-left"></i></button>
+        <button type="button" class="arrow-btn" id="destNext" aria-label="Next"><i class="ph ph-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="trips" id="trips"></div>
+  </div>
+</section>
+
+<section id="story" class="section story">
+  <div class="container story-grid">
+    <div class="story-photos" data-reveal>
+      <div class="slot ratio-4-5"><span>Portrait of Jan &amp; Maria</span></div>
+      <img src="assets/hd/garden-night.jpg" alt="Garden at night" class="story-inset">
+    </div>
+    <div data-reveal>
+      <p class="kicker" data-i18n="storyKicker"></p>
+      <h2 class="h2 story-title" data-i18n="storyTitle"></h2>
+      <p class="body muted story-p" data-i18n="storyP1"></p>
+      <p class="body muted story-p story-p2" data-i18n="storyP2"></p>
+      <blockquote class="quote" data-i18n="storyQuote"></blockquote>
+      <p class="quote-by">Jan &amp; Maria</p>
+    </div>
+  </div>
+</section>
+
+<section id="rates" class="section section-paper">
+  <div class="container">
+    <div class="rate-card" data-reveal>
+      <div class="rate-left">
+        <p class="kicker kicker-gold-light" data-i18n="rateKicker"></p>
+        <p class="rate-price">IDR 1.100.000</p>
+        <p class="rate-sub" data-i18n="rateSub"></p>
+        <ul class="rate-items" id="rateItems"></ul>
+      </div>
+      <div class="rate-right">
+        <p class="calc-title" data-i18n="calcTitle"></p>
+        <div class="calc-row">
+          <span class="calc-label" data-i18n="calcNights"></span>
+          <div class="stepper">
+            <button type="button" class="round-btn" id="decNights" aria-label="-"><i class="ph ph-minus"></i></button>
+            <span class="stepper-num" id="nightsNum">2</span>
+            <button type="button" class="round-btn" id="incNights" aria-label="+"><i class="ph ph-plus"></i></button>
+          </div>
+        </div>
+        <div class="calc-row">
+          <span class="calc-label" data-i18n="calcVillas"></span>
+          <div class="pill-group pill-group-outline" id="villaOpts">
+            <button type="button" class="pill pill-mini is-active" data-villas="1">1</button>
+            <button type="button" class="pill pill-mini" data-villas="2">2</button>
+          </div>
+        </div>
+        <button type="button" class="calc-row calc-switch" id="extraToggle" aria-pressed="false">
+          <span class="calc-label" data-i18n="calcExtra"></span>
+          <span class="switch"><span class="switch-knob"></span></span>
+        </button>
+        <div class="rule"></div>
+        <div class="calc-row calc-total">
+          <span class="calc-label" data-i18n="calcTotal"></span>
+          <span class="calc-total-num">IDR <span id="totalFmt">2.200.000</span></span>
+        </div>
+        <p class="calc-note" id="calcNote"></p>
+        <button type="button" class="btn btn-gold btn-block" id="calcSend"><i class="ph ph-whatsapp-logo"></i><span data-i18n="calcCta"></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section" aria-label="FAQ">
+  <div class="container faq-grid">
+    <div data-reveal>
+      <p class="kicker">FAQ</p>
+      <h2 class="h2" data-i18n="faqTitle"></h2>
+    </div>
+    <div class="faq-list" id="faqs"></div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div data-reveal>
+      <p class="kicker" data-i18n="navContact"></p>
+      <h2 class="h2 contact-title" data-i18n="contactTitle"></h2>
+      <p class="body muted contact-body" data-i18n="contactBody"></p>
+      <div class="contact-lines">
+        <a href="https://wa.me/620000000000" id="waLink"><i class="ph-light ph-whatsapp-logo"></i>+62 000 0000 0000</a>
+        <a href="mailto:stay@greenoasisvillas.com"><i class="ph-light ph-envelope-simple"></i>stay@greenoasisvillas.com</a>
+        <span><i class="ph-light ph-map-pin"></i>Borobudur, Magelang — Jawa Tengah</span>
+      </div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+        <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+        <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+      </div>
+    </div>
+    <form class="form" id="enquiryForm" data-reveal>
+      <p class="form-title" data-i18n="formTitle"></p>
+      <label><span data-i18n="fName"></span><input name="name" required></label>
+      <div class="form-2col">
+        <label><span data-i18n="fIn"></span><input type="date" name="in"></label>
+        <label><span data-i18n="fOut"></span><input type="date" name="out"></label>
+      </div>
+      <div class="form-2col">
+        <label><span data-i18n="fGuests"></span><input type="number" min="1" max="12" name="guests" value="2"></label>
+        <label><span data-i18n="fVilla"></span>
+          <select name="villa">
+            <option data-i18n="villaA"></option>
+            <option data-i18n="villaB"></option>
+            <option data-i18n="both"></option>
+          </select>
+        </label>
+      </div>
+      <label><span data-i18n="fMsg"></span><textarea name="msg" rows="3" data-i18n-ph="fMsgPh"></textarea></label>
+      <button type="submit" class="btn btn-forest btn-block"><i class="ph ph-whatsapp-logo"></i><span data-i18n="send"></span></button>
+      <p class="form-note" data-i18n="formNote"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <span class="logo-circle logo-circle-lg"><img src="assets/icon.png" alt="Green Oasis Villas Borobudur"></span>
+      <div class="footer-words">
+        <span class="footer-name">Green <span class="gold">Oasis</span> Villas</span>
+        <span class="footer-line" data-i18n="footerLine"></span>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Green Oasis Villas · Borobudur, Jawa Tengah</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <img id="lbImg" src="" alt="">
+  <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="ph ph-x"></i></button>
+  <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous"><i class="ph ph-arrow-left"></i></button>
+  <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next"><i class="ph ph-arrow-right"></i></button>
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
